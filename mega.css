@@ -733,42 +733,50 @@ p .log {
     color: white;
     font-size: large;
 
-} 
-/* here is start mobile responssive */
-
+}
+/* here is mobile responsive */
 @media screen and (max-width: 1024px) {
+
     .top-nav,
-    .second-nav,
-    .hero,
-    .Banner,
-    .SmartPhoneSection,
-    .footer-section {
-        padding-left: 4%;
-        padding-right: 4%;
+    .MegaMart .top-nav {
+        padding: 10px 3%;
     }
 
-    .top-nav .top-right {
-        gap: 10px;
+    .MegaMart .second-nav {
+        padding: 10px 3%;
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
     .second-navbar .mega {
-        width: 280px;
+        width: 300px;
     }
 
     .second-nav .second-navbar {
         gap: 20px;
+        flex-wrap: wrap;
     }
 
     .hero {
+        padding: 10px 3%;
         height: auto;
         flex-wrap: wrap;
         gap: 10px;
     }
 
+    .Banner,
+    .SmartPhoneSection {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
     .section-1 {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .section-1 .phone {
+        width: calc(25% - 12px);
     }
 
     .phone .side {
@@ -777,36 +785,31 @@ p .log {
     }
 
     .phone .phone-img {
-        margin-left: 20px;
+        margin: 0 auto;
     }
 
-    .section-3 {
-        flex-wrap: wrap;
-        height: auto;
-        gap: 20px;
-        justify-content: space-around;
-        padding: 20px 0;
-    }
-
-    .section-5 {
-        height: auto;
-        gap: 15px;
-    }
-
-    .section-5 .section-5border {
-        width: 32%;
-        height: auto;
-    }
-
-    .section-5border .img-5 {
+    .phone-img img {
         width: 100%;
-        height: auto;
+        object-fit: contain;
     }
 
+    .section-3,
+    .section-5,
     .Section-7 {
         flex-wrap: wrap;
         gap: 20px;
-        justify-content: space-around;
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .section-5 .section-5border,
+    .section-5border .img-5 {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .footer-section {
+        padding: 25px 4%;
     }
 
     .footer-main {
@@ -819,91 +822,115 @@ p .log {
     }
 }
 
-/* Mobile Responsive */
+
+/* Mobile */
 @media screen and (max-width: 768px) {
 
+    * {
+        max-width: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Top Navigation */
     .MegaMart .top-nav {
+        padding: 10px 4%;
         flex-direction: column;
         gap: 10px;
-        padding: 10px 4%;
+        text-align: center;
     }
 
     .top-nav .top-right {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 5px;
+        gap: 8px;
     }
 
     .top-right .top-card {
-        padding: 5px;
+        padding: 0 8px;
         font-size: 12px;
         border-right: none;
     }
 
+    .top-nav .welcome {
+        font-size: 12px;
+    }
+
+    /* Second Navigation */
     .MegaMart .second-nav {
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 15px;
         padding: 12px 4%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
     }
 
     .second-nav .para {
-        font-size: 24px;
+        font-size: 25px;
     }
 
     .second-nav .second-navbar {
-        width: 100%;
+        display: flex;
         flex-wrap: wrap;
+        align-items: center;
         justify-content: space-between;
         gap: 12px;
     }
 
     .second-navbar .mega {
+        order: 3;
         width: 100%;
-        height: auto;
-        min-height: 40px;
+        height: 40px;
         display: flex;
         align-items: center;
-        gap: 5px;
+        margin-top: 5px;
+        padding: 8px;
     }
 
     .mega .search-bar {
-        margin: 0;
         min-width: 0;
-    }
-
-    .mega .bar {
-        margin-left: auto;
+        flex: 1;
     }
 
     .signin .sign {
         font-size: 14px;
     }
 
-    .second-navbar .troly {
-        font-size: 16px;
+    .signin p {
+        margin-top: 5px;
     }
 
+    .second-navbar .troly {
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    /* Category Navigation */
     .hero {
-        padding: 10px 4%;
+        padding: 12px 4%;
         height: auto;
-        justify-content: center;
-        gap: 8px;
+        justify-content: flex-start;
+        gap: 10px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
     }
 
     .hero .item {
+        flex-shrink: 0;
         height: auto;
-        padding: 8px 12px;
-        border-radius: 15px;
+        padding: 10px 14px;
+        white-space: nowrap;
     }
 
-    .hero .item-pa {
-        font-size: 13px;
-    }
-
+    /* Banner */
     .Banner {
-        height: 220px;
-        padding: 10px 5%;
+        height: 200px;
+        padding: 10px 4%;
+    }
+
+    .Banner .banner-div {
+        overflow: visible;
     }
 
     .banner-div .banner-image {
@@ -913,8 +940,9 @@ p .log {
 
     .banner-div .left-arrow,
     .banner-div .right-arrow {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
+        top: 42%;
     }
 
     .banner-div .left-arrow {
@@ -925,26 +953,61 @@ p .log {
         right: -10px;
     }
 
+    /* Section Headings */
     .SmartPhoneSection {
         padding: 0 4%;
         margin-top: 25px;
     }
 
+    .SmartPhoneSection .SmartPhone-top,
+    .Section-2 .section-2top,
+    .Section-4 .section-4top,
+    .Section-6 .section-6top {
+        height: auto;
+        min-height: 45px;
+        gap: 10px;
+    }
+
+    .left-content,
+    .left-content2,
+    .left-content4,
+    .left-content6 {
+        font-size: 16px !important;
+    }
+
+    .SmartPhoneSection .rightarrow,
+    .Section-2 .rightarrow2,
+    .Section-4 .rightarrow4,
+    .Section-6 .rightarrow6 {
+        gap: 5px;
+        flex-shrink: 0;
+    }
+
+    /* Phone Products */
     .section-1 {
+        display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
         margin-top: 20px;
     }
 
+    .section-1 .phone {
+        width: 100%;
+        min-width: 0;
+    }
+
     .phone .side {
-        font-size: 15px;
-        padding: 7px;
+        margin-left: auto;
+        padding: 6px;
+        width: fit-content;
+        font-size: 14px;
     }
 
     .phone .phone-img {
-        width: 100px;
+        width: 100%;
         height: 120px;
         margin: 0 auto;
+        padding: 5px;
     }
 
     .phone-img img {
@@ -963,6 +1026,7 @@ p .log {
         font-size: 13px;
     }
 
+    /* Categories */
     .Section-2,
     .Section-4,
     .Section-6 {
@@ -970,8 +1034,12 @@ p .log {
     }
 
     .section-3 {
-        gap: 20px 12px;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px 10px;
+        height: auto;
+        justify-items: center;
+        padding: 20px 0;
     }
 
     .section-3 .section-3border {
@@ -985,31 +1053,39 @@ p .log {
         object-fit: contain;
     }
 
-    .name .name1 {
-        font-size: 13px;
+     .name .name1 {
+        font-size: 0.3px;
         text-align: center;
-    }
+    } 
 
+    /* Promotional Banners */
     .section-5 {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        height: auto;
+        padding: 10px 0;
     }
 
     .section-5 .section-5border {
         width: 100%;
+        height: auto;
     }
 
     .section-5border .img-5 {
         width: 100%;
-        height: 130px;
+        height: auto;
+        aspect-ratio: 16 / 7;
         object-fit: cover;
     }
 
+    /* Other Products */
     .Section-7 {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 15px;
+        height: auto;
+        padding: 15px 0;
     }
 
     .Section-7 .section-7border {
@@ -1021,31 +1097,32 @@ p .log {
         width: 100%;
         height: 130px;
         object-fit: contain;
-        margin: 0;
+        margin-bottom: 10px;
     }
 
+    .name3 .name33 {
+        font-size: 14px;
+    }
+
+    .offer .offer2 {
+        font-size: 15px;
+    }
+
+    /* Footer */
     .footer-section {
         padding: 25px 5%;
     }
 
-    .footer-main {
+    .footer-section .footer-main {
+        display: flex;
         flex-direction: column;
-        gap: 30px;
-    }
-
-    .footer-main .footer-left,
-    .footer-main .footer-right {
-        width: 100%;
+        gap: 25px;
         height: auto;
     }
 
-    .footer-main .footer-right {
-        gap: 20px;
-    }
-
-    .footer-right .right-1,
-    .footer-right .right-2 {
-        width: 50%;
+    .footer-main .footer-left {
+        width: 100%;
+        height: auto;
     }
 
     .footer-left .lastn {
@@ -1053,12 +1130,12 @@ p .log {
     }
 
     .footer-left .con {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .footer-left .mobile,
     .footer-left .mobile1 {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .footer-left .img-cont img {
@@ -1067,123 +1144,71 @@ p .log {
         object-fit: contain;
     }
 
-    .most1,
-    .most2 {
-        padding-left: 5px;
-    }
-
-    .most1 .menu,
-    .most2 .menu2 {
-        gap: 10px;
-        font-size: 13px;
-    }
-
-    .line3 {
-        height: auto;
-        min-height: 45px;
-    }
-
-    .last-end1 .last-color {
-        font-size: 14px;
-    }
-}
-
-/* Small Mobile Responsive */
-@media screen and (max-width: 480px) {
-
-    .top-nav .welcome {
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .top-right .top-card {
-        font-size: 11px;
-    }
-
-    .second-nav .para {
-        font-size: 22px;
-    }
-
-    .hero .item {
-        padding: 7px 9px;
-    }
-
-    .hero .item-pa {
-        font-size: 11px;
-    }
-
-    .Banner {
-        height: 170px;
-    }
-
-    .SmartPhones-left .left-content,
-    .section-2left .left-content2,
-    .section-4left .left-content4,
-    .section-6left .left-content6 {
-        font-size: 15px;
-    }
-
-    .SmartPhoneSection .SmartPhone-top {
-        height: auto;
-        min-height: 45px;
-        gap: 8px;
-    }
-
-    .SmartPhone-top .rightarrow,
-    .Section-2 .rightarrow2,
-    .Section-4 .rightarrow4,
-    .Section-6 .rightarrow6 {
-        gap: 5px;
-        font-size: 13px;
-    }
-
-    .section-1 {
-        gap: 10px;
-    }
-
-    .phone .phone-img {
-        width: 85px;
-        height: 100px;
-    }
-
-    .data .value,
-    .data .save {
-        font-size: 12px;
-    }
-
-    .section-3 {
-        gap: 15px 8px;
-    }
-
-    .section-3 .section-3border {
-        width: 65px;
-        height: 65px;
-    }
-
-    .section-5border .img-5 {
-        height: 100px;
-    }
-
-    .section-7border .img-7 {
-        height: 110px;
-    }
-
     .footer-main .footer-right {
-        gap: 12px;
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .footer-right .right-1,
+    .footer-right .right-2 {
+        width: 100%;
+        height: auto;
     }
 
     .right-head .most,
     .right-2head .Custmore {
-        font-size: 14px;
+        font-size: 15px;
+    }
+
+    .most1,
+    .most2 {
+        padding-left: 10px;
+        font-size: 13px;
     }
 
     .most1 .menu,
     .most2 .menu2 {
-        font-size: 12px;
-        overflow-wrap: anywhere;
+        gap: 10px;
     }
 
-    .footer-left .img-cont img {
-        height: 40px;
+    .line3 {
+        height: auto;
+        min-height: 40px;
+    }
+
+    .last-end1 {
+        padding: 12px 5px;
+    }
+
+    .last-end1 .last-color {
+        font-size: 13px;
+    }
+}
+/* Small Mobile Responsive */
+@media screen and (max-width: 380px) {
+
+    .Banner {
+        height: 160px;
+    }
+
+    .section-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        
+    }
+    .name .name1 {
+        font-size: 0.4rem;
+        text-align: center;
+
+    }
+
+    .footer-main .footer-right {
+        grid-template-columns: 1fr;
+    }
+
+    .top-right .top-card {
+        font-size: 11px;
     }
 }
